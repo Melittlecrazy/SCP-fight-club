@@ -7,8 +7,11 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private float accelForce = 10f;
 
+    [SerializeField]
+    private float speed = 1.0f;
+
     private new Rigidbody2D rigidbody;
-    public float speed = 1.0f;
+
 
     void Start()
     {
@@ -18,8 +21,7 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         // wanted to use "if (Input.GetAxisRaw("Horizontal") > 0);" but I don't know how
-
-         if(Input.GetKey(KeyCode.RightArrow))
+        if(Input.GetKey(KeyCode.RightArrow))
         {
             rigidbody.velocity = new Vector2(+speed, rigidbody.velocity.y);
         }
@@ -31,11 +33,9 @@ public class Movement : MonoBehaviour
         { //gravity
             rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
         }
-
-            if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            float jumpVelocity = 10f;
-            rigidbody.velocity = Vector2.up * jumpVelocity;
+            rigidbody.velocity = Vector2.up * accelForce * speed;
         }
     }
 
