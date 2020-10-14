@@ -1,18 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Text opponantHealth;
+    public Text yourHealth;
+    public bool isPlayer2 = false;
+    public bool isPlayer1 = false;
+
+    private int health = 100;//change this to a float when working on special movies
+
     void Start()
     {
-        
+        health = 100;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.tag == "Punch" && isPlayer1 == true)
+        {
+            health = health - 5;
+            opponantHealth.text = "Health: " + health.ToString();
+        }
+
+        if (other.tag == "Punch" && isPlayer2 == true)
+        {
+            health = health - 5;
+            ;
+        }
     }
 }
