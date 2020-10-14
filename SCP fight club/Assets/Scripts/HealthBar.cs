@@ -7,6 +7,7 @@ public class HealthBar : MonoBehaviour
 {
     public Text opponantHealth;
     public Text yourHealth;
+    public GameObject death;
     public bool isPlayer2 = false;
     public bool isPlayer1 = false;
 
@@ -19,16 +20,11 @@ public class HealthBar : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Punch" && isPlayer1 == true)
+        if ((other.tag == "Punch" && isPlayer1 == true) || (other.tag == "Punch" && isPlayer2 == true))
         {
             health = health - 5;
-            opponantHealth.text = "Health: " + health.ToString();
-        }
-
-        if (other.tag == "Punch" && isPlayer2 == true)
-        {
-            health = health - 5;
-            opponantHealth.text = "Health: " + health.ToString();
+            opponantHealth.text = "  Health: " + health.ToString() + "  ";
+            if (health == 0) death.SetActive(true);
         }
     }
 }
