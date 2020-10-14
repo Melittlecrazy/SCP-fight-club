@@ -28,7 +28,7 @@ public class HealthBar : MonoBehaviour
         if (other.tag == "Punch" && isPlayer2 == true)
         {
             health = health - 5;
-            ;
+            opponantHealth.text = "Health: " + health.ToString();
         }
     }
 }
