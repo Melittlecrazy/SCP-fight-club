@@ -11,7 +11,7 @@ public class HealthBar : MonoBehaviour
     public bool isPlayer2 = false;
     public bool isPlayer1 = false;
 
-    private float health = 100f;
+    private float health = 100.0f;
     
     void Start()
     {
@@ -29,7 +29,7 @@ public class HealthBar : MonoBehaviour
 
         if ((other.tag == "Kick" && isPlayer1 == true) || (other.tag == "Kick" && isPlayer2 == true))
         {
-            health = health - .7f;
+            health = health - 1.0f;
             opponantHealth.text = "  Health: " + health.ToString() + "  ";
             if (health == 0) death.SetActive(true);
         }
