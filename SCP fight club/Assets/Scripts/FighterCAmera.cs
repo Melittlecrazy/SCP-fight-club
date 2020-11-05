@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-﻿using System.Collections;
-=======
-﻿=using System.Collections;
->>>>>>> master
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -51,10 +47,6 @@ public class FighterCAmera : MonoBehaviour
         float distance = xMax - xMin;
         if (distance < minDistance) distance =minDistance;
 
-<<<<<<< HEAD
         transform.position = new Vector3(xMid, yMid, -minDistance);
-=======
-        transform.position = new Vector2(xMid, yMid, -minDistance);
->>>>>>> master
     }
 }
