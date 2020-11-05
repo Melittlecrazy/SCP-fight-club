@@ -11,8 +11,8 @@ public class HealthBar : MonoBehaviour
     public bool isPlayer2 = false;
     public bool isPlayer1 = false;
 
-    private int health = 100;//change this to a float when working on special movies
-
+    private float health = 100.0f;
+    
     void Start()
     {
         health = 100;
@@ -22,7 +22,14 @@ public class HealthBar : MonoBehaviour
     {
         if ((other.tag == "Punch" && isPlayer1 == true) || (other.tag == "Punch" && isPlayer2 == true))
         {
-            health = health - 5;
+            health = health - .5f;
+            opponantHealth.text = "  Health: " + health.ToString() + "  ";
+            if (health == 0) death.SetActive(true);
+        }
+
+        if ((other.tag == "Kick" && isPlayer1 == true) || (other.tag == "Kick" && isPlayer2 == true))
+        {
+            health = health - 1.0f;
             opponantHealth.text = "  Health: " + health.ToString() + "  ";
             if (health == 0) death.SetActive(true);
         }
