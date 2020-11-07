@@ -8,7 +8,7 @@ It's a story of a creatures that anyone can create. All SCPs are apart of the Cr
 Here's the [SCP Foundation Wiki](http://www.scpwiki.com/) of which you can read all SCP stories. I will keep track of which SCP creatures I will be using.
 
 ### The SCPs that are being used:
-SCP-035: https://sketchfab.com/3d-models/scp-035-f6c0565b38044ff6a8a0827fc5128eed Model made by [Marmar3](https://sketchfab.com/Marmar3)
-SCP-049: https://sketchfab.com/3d-models/scp-049-265d105b63c446329a78379e177d1f09 Model made by [Maxime66410](https://sketchfab.com/max66410)
+1. SCP-035: https://sketchfab.com/3d-models/scp-035-f6c0565b38044ff6a8a0827fc5128eed Model made by [Marmar3](https://sketchfab.com/Marmar3)
+1. SCP-049: https://sketchfab.com/3d-models/scp-049-265d105b63c446329a78379e177d1f09 Model made by [Maxime66410](https://sketchfab.com/max66410)
 
 [//]: # (### All credit for the SCPs go to the creators. if you see someone using an SCP and not credit the creator then message the original creator and the person using the SCP)
