@@ -18,18 +18,18 @@ public class HealthBar : MonoBehaviour
         health = 100;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if ((other.tag == "Punch" && isPlayer1 == true) || (other.tag == "Punch" && isPlayer2 == true))
         {
-            health = health - .5f;
+            health = health - 5f;
             opponantHealth.text = "  Health: " + health.ToString() + "  ";
             if (health == 0) death.SetActive(true);
         }
 
         if ((other.tag == "Kick" && isPlayer1 == true) || (other.tag == "Kick" && isPlayer2 == true))
         {
-            health = health - 1.0f;
+            health = health - 10f;
             opponantHealth.text = "  Health: " + health.ToString() + "  ";
             if (health == 0) death.SetActive(true);
         }
