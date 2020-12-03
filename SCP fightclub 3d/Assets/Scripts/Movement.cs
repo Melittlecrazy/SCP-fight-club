@@ -12,31 +12,33 @@ public class Movement : MonoBehaviour
 
     private new Rigidbody rigidbody;
 
-    public bool isPlayer2 = false;
-    public bool isPlayer1 = false;
+    public Animator animator;
 
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         // wanted to use "if (Input.GetAxisRaw("Horizontal") > 0);" but I don't know how
         //for player 1
-        if ((Input.GetKey(KeyCode.RightArrow) && isPlayer1 == true)||(Input.GetKey(KeyCode.D) &&  isPlayer2 == true))
+        if (Input.GetKey(KeyCode.RightArrow) == true)
         {
             rigidbody.velocity = new Vector2(+speed, rigidbody.velocity.y);
+            animator.SetInteger("walking", 1);
         }
-        else if ((Input.GetKey(KeyCode.LeftArrow) && isPlayer1 == true) || (Input.GetKey(KeyCode.A) &&  isPlayer2 == true))
+        else if (Input.GetKey(KeyCode.LeftArrow) == true)
         {
             rigidbody.velocity = new Vector2(-speed, rigidbody.velocity.y);
+            animator.SetInteger("walking", -1);
         }
         else
         { //gravity
             rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
         }
-        if ((Input.GetKeyDown(KeyCode.UpArrow) &&  isPlayer1 == true) || (Input.GetKeyDown(KeyCode.W) &&  isPlayer2 == true))
+        if (Input.GetKeyDown(KeyCode.UpArrow) == true)
         {
             rigidbody.velocity = Vector2.up * accelForce * speed;
         }

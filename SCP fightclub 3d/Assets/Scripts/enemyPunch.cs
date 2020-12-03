@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Punch : MonoBehaviour
+public class enemyPunch : MonoBehaviour
 {
     public GameObject fist;
     public GameObject kick;
@@ -12,24 +12,23 @@ public class Punch : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) == true)
+        if (Input.GetKey(KeyCode.E) == true)
         {
             fist.SetActive(true);
             animator.SetBool("punch", true);
         }
         else
-        { 
-            fist.SetActive(false) ;
-            animator.SetBool("punch", false); 
+        {
+            fist.SetActive(false);
+            animator.SetBool("punch", false);
         }
 
-        if (Input.GetKey(KeyCode.RightShift) == true)
+        if (Input.GetKey(KeyCode.Q) == true)
         {
             kick.SetActive(true);
-            animator.SetBool("kick", true);
+            animator.SetBool("punch", true);
         }
         else
         {
