@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -37,6 +37,7 @@ public class Movement : MonoBehaviour
         else
         { //gravity
             rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
+            animator.SetInteger("walking", 0);
         }
         if (Input.GetKeyDown(KeyCode.UpArrow) == true)
         {
